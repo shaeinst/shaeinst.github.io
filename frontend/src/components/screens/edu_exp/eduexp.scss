@@ -1,0 +1,84 @@
+.eduexp {
+    margin-top: 6rem;
+    margin-left: 5rem;
+    padding-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
+    gap: 10rem;
+
+    .education,
+    .experience {
+        // background-color: red;
+        width: 35vw;
+        font-size: 1.3rem;
+
+        .course {
+            display: flex;
+            gap: 15px;
+            font-size: 1rem;
+
+            .date {
+                // background-color: yellow;
+                min-width: 90px;
+            }
+            .horizontal {
+                background-color: #979797;
+                min-width: 5rem;
+                height: 3px;
+                margin-top: 9px;
+                position: relative;
+                // color: ;
+
+                &::before {
+                    content: "Education";
+                    font-size: 1.3rem;
+                    position: absolute;
+                    top: -70px;
+                }
+
+                &::after {
+                    content: "";
+                    display: flex;
+                    background-color: #979797;
+                    width: 3px;
+                    height: 120px;
+                    margin-left: 50%;
+                    padding-top: 20px;
+                    position: absolute;
+                    top: -20px;
+                }
+            }
+            .course__name {
+                margin-left: 5px;
+            }
+        }
+    }
+    .experience {
+        margin-left: auto;
+        .course {
+            .horizontal {
+                &::before {
+                    content: "Experience";
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .eduexp {
+        margin-left: 2rem;
+        padding-right: auto;
+        display: flex;
+
+        .education,
+        .experience {
+            width: 85vw;
+            font-size: 1.3rem;
+        }
+        .experience {
+            margin-left: 1.5rem;
+        }
+    }
+}
