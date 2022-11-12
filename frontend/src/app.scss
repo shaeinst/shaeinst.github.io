@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+
+/* ─────────────────────────────────────────── */
+/* ─────────────  Global Config  ───────────── */
+:root {
+    --text-special: #707ef5;
+}
+
+body {
+    /* maximum webite width and height */
+    max-width: 1200px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-height: 1680px;
+    margin-inline: auto;
+
+    font-family: "Itim", sans-serif;
+    font-size: 16px;
+}
+/* ──────────  end Global Config  ──────────── */
+/* ─────────────────────────────────────────── */
+
+/* ─────────────────────────────────────────── */
+/* ────────────────  Layout  ───────────────── */
+
+#App {
+    // background-color: pink;
+    height: 100vh;
+    max-width: 100vw;
+    display: grid;
+    grid-template-areas:
+        "blank   navbar"
+        "sidebar container";
+    grid-template-columns: minmax(200px, 1fr) 4fr;
+    grid-template-rows: 0.8fr 5fr;
+
+    #sidebar {
+        // background-color: yellow;
+        grid-area: sidebar;
+    }
+    #navbar {
+        // background-color: pink;
+        grid-area: navbar;
+        padding-bottom: 20px;
+        margin-left: 1rem;
+    }
+    #container {
+        // background-color: orange;
+        grid-area: container;
+        border-top: 1px solid #7e7e7e;
+        border-left: 1px solid #7e7e7e;
+        border-radius: 3px;
+        // overflow-y: scroll;
+        // // scrollbar-width: none;
+        // scrollbar-width: auto;
+        // -ms-overflow-style: none;
+
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
+
+        // overflow: hidden;
+    }
+
+    #wave {
+        // background-color: blue;
+        height: 40vh;
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        // transform: rotate(1deg);
+        background-image: url("./assets/decorations/Wave.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 2;
+    }
+}
+
+/* ─────────────────────────────────────────── */
+/* ─────────────  Small Screen  ────────────── */
+@media screen and (max-width: 768px) {
+    #App {
+        // background-color: orangered;
+        height: 100vh;
+        max-width: 100vw;
+        display: grid;
+        grid-template-areas:
+            "navbar"
+            "container";
+        grid-template-columns: 100%;
+        grid-template-rows: 1.5fr 10fr;
+
+        #navbar {
+            grid-area: navbar;
+            margin: inherit;
+            overflow: scroll hidden;
+        }
+
+        #container {
+            // background-color: blue;
+            grid-area: container;
+            margin: inherit;
+            position: relative;
+            overflow: hidden;
+        }
+        .wave {
+            &::after {
+                position: absolute;
+                content: "";
+                background: #707ef5;
+                transform: rotate(45deg);
+                z-index: -2;
+                top: 55vh;
+                left: 40vw;
+                width: 500px;
+                height: 500px;
+                scale: 1.6;
+                border-top-left-radius: 120px;
+
+                box-shadow: 4px 4px 2px rgba(106, 20, 20, 0.25),
+                    -3px -3px 2px rgba(169, 154, 154, 0.35);
+            }
+        }
+    }
+}
+/* ───────────  end Small Screen  ──────────── */
+/* ─────────────────────────────────────────── */
+
+/* ──────────────  end Layout  ─────────────── */
+/* ─────────────────────────────────────────── */

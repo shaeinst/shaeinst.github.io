@@ -1,0 +1,48 @@
+.home__container {
+    // background-color: yellow;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .name__detail {
+        margin-top: 5rem;
+        margin-left: 5rem;
+
+        .intro {
+            // background-color: red;
+            font-size: 28px;
+        }
+        .name {
+            // background-color: blue;
+            font-size: 64px;
+        }
+        .quote {
+            // background-color: green;
+            font-size: 28px;
+        }
+        .name,
+        span {
+            color: #707ef5;
+        }
+    }
+    // .wave {
+    //     // background-color: blue;
+    //     margin-top: auto;
+    //     height: 35vh;
+
+    //     background-image: url("../../../assets/decorations/Wave.svg");
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+    // }
+}
+
+@media screen and (max-width: 768px) {
+    .home__container {
+
+    .name__detail {
+        // margin-top: 5rem;
+        margin-left: 2rem;
+        }
+    }
+}

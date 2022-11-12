@@ -1,0 +1,115 @@
+.side {
+    // background-color: #0f6fff;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12vh;
+    margin-left: 20px;
+
+    /* offset-x | offset-y | blur-radius | color */
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .skills {
+        // background-color: blue;
+        font-size: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+
+        .list {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: auto;
+
+        .profile__picture {
+            width: 8rem;
+            height: 8rem;
+            border: 3px solid #5c5c5c;
+            border-radius: 100%;
+            background-image: url("../../../assets/images/profile_pic.png");
+            background-size: cover;
+            transition: all 0.3s;
+
+            &:hover {
+                border-radius: 0;
+            }
+
+            &::after {
+                min-width: 400px;
+                min-height: 410px;
+                background-color: green;
+            }
+        }
+        .profile__name {
+            font-size: 28px;
+            padding-top: 10px;
+        }
+    }
+
+    .social__links {
+        // background-color: green;
+        z-index: 100;
+        display: flex;
+        gap: 0.8em;
+        margin-top: 25%;
+        font-size: 1.5rem;
+
+        .social {
+            cursor: pointer;
+            transition: all 0.3s;
+
+            &:hover {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .side {
+        // background-color: #f0f000;
+        width: 100%;
+        margin: inherit;
+        padding: inherit;
+        position: absolute;
+        top: 23rem;
+        display: grid;
+        // grid-gap: 10px;
+
+        grid-template-areas:
+            "profile skills"
+            "profile skills";
+        grid-template-columns: 50% 50%;
+
+        .profile {
+            // background-color: gray;
+            grid-area: profile;
+            margin-left: 2rem;
+            align-self: center;
+        }
+
+        .skills {
+            // background-color: pink;
+            grid-area: skills;
+            justify-self: center;
+            margin-right: auto;
+        }
+
+        .social__links {
+            // background-color: greenyellow;
+            z-index: 100;
+            grid-area: skills;
+            justify-self: center;
+            align-self: center;
+            margin-right: auto;
+            margin-top: 4rem;
+        }
+    }
+}
