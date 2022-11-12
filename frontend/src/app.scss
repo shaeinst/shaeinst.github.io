@@ -95,6 +95,13 @@ body {
             grid-area: navbar;
             margin: inherit;
             overflow: scroll hidden;
+
+            &::-webkit-scrollbar {
+                height: 2px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #707ef5;
+            }
         }
 
         #container {
