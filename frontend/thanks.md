@@ -1,1 +1,3 @@
-https://simpleicons.org/ for icons
+## for icons
+https://simpleicons.org
+https://iconscout.com
