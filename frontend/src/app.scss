@@ -32,7 +32,7 @@ body {
         "blank   navbar"
         "sidebar container";
     grid-template-columns: minmax(200px, 1fr) 4fr;
-    grid-template-rows: 0.8fr 5fr;
+    grid-template-rows: 0.6fr 5fr;
 
     #sidebar {
         // background-color: yellow;
@@ -43,6 +43,7 @@ body {
         grid-area: navbar;
         padding-bottom: 20px;
         margin-left: 1rem;
+        position: relative;
     }
     #container {
         // background-color: orange;
@@ -89,20 +90,7 @@ body {
             "navbar"
             "container";
         grid-template-columns: 100%;
-        grid-template-rows: 1.5fr 10fr;
-
-        #navbar {
-            grid-area: navbar;
-            margin: inherit;
-            overflow: scroll hidden;
-
-            &::-webkit-scrollbar {
-                height: 2px;
-            }
-            &::-webkit-scrollbar-thumb {
-                background: #707ef5;
-            }
-        }
+        grid-template-rows: 1fr 10fr;
 
         #container {
             // background-color: blue;

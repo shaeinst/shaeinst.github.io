@@ -21,7 +21,7 @@
 .container__skill {
     // background-color: red;
     margin-left: 5rem;
-    margin-top: 4rem;
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -58,6 +58,5 @@
 @media screen and (max-width: 768px) {
     .container__skill {
         margin-left: 10vw;
-        margin-top: 4rem;
     }
 }
