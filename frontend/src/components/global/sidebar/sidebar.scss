@@ -93,6 +93,22 @@
             grid-area: profile;
             margin-left: 2rem;
             align-self: center;
+
+            .profile__picture {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    background: #707ef5;
+                    z-index: -2;
+                    transform: rotate(45deg);
+                    width: 840px;
+                    height: 720px;
+                    scale: 1.1;
+                    border-top-left-radius: 120px;
+                    box-shadow: 4px 4px 2px rgba(106, 20, 20, 0.25),
+                        -3px -3px 2px rgba(169, 154, 154, 0.35);
+                }
+            }
         }
 
         .skills {
