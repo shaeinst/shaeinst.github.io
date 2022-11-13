@@ -7,7 +7,6 @@
     height: 12rem;
     display: flex;
     flex-direction: column;
-    margin-top: 4rem;
     padding-left: 1rem;
     padding-right: 5rem;
 
@@ -49,6 +48,10 @@
 
 .container__projects {
     margin-left: 5rem;
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 
     .right {
         margin-left: 20vw;
@@ -60,7 +63,6 @@
         // background-color: red;
         width: 10rem;
         height: 10rem;
-        margin-top: 4rem;
         padding-left: 1rem;
         padding-right: 4.2rem;
 
@@ -82,7 +84,7 @@
     }
 
     .container__projects {
-        margin-left: 10vw;
-        margin-top: 2rem;
+        margin-left: inherit;
+        align-items: center;
     }
 }
