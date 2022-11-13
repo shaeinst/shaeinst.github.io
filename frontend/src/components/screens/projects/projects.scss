@@ -84,7 +84,12 @@
     }
 
     .container__projects {
-        margin-left: inherit;
+        margin-left: 12px;
+        margin-right: 12px;
         align-items: center;
+
+        .right {
+            margin-left: inherit;
+        }
     }
 }
