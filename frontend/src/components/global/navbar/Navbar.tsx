@@ -87,21 +87,6 @@ const Navbar = ({ themeModeState }: any) => {
                 style={activeArticle ? { visibility: "hidden" } : {}}
             >
                 {/* ────────────────────────────────────── */}
-                {/* ──────────────── Home ──────────────── */}
-                <NavLink
-                    to="/"
-                    style={style}
-                    className={({ isActive }) =>
-                        isActive
-                            ? "nav__item home active__link"
-                            : "nav__item home"
-                    }
-                    end
-                >
-                    Home
-                </NavLink>
-
-                {/* ────────────────────────────────────── */}
                 {/* ─────────────── SKILLS ─────────────── */}
                 <NavLink
                     to="/skills"
