@@ -1,16 +1,14 @@
 .eduexp {
     margin-top: 9rem;
     margin-left: 5rem;
-    padding-right: 5rem;
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     gap: 10rem;
 
     .education,
     .experience {
         // background-color: red;
-        width: 35vw;
+        width: 45vw;
         font-size: 1.3rem;
 
         .course {
@@ -68,17 +66,21 @@
 
 @media screen and (max-width: 768px) {
     .eduexp {
-        margin-left: 2rem;
-        padding-right: auto;
+        // background-color: red;
+        margin-left: inherit;
         display: flex;
+        gap: 2rem;
+        align-items: center;
 
         .education,
         .experience {
+            width: inherit;
             width: 85vw;
             font-size: 1.3rem;
         }
         .experience {
-            margin-left: 1.5rem;
+            margin: inherit;
+            margin-left: 3rem;
         }
     }
 }
