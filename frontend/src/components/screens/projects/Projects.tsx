@@ -10,13 +10,11 @@ const Projects = ({ themeMode, screenSize }: any) => {
         url: string
     ) => {
         let style_card__thumbnail: any = {
-            // https://abstract-ide.github.io/site/
             backgroundImage: `url(${thumbnail}) `,
-            // backgroundImage: `url(https://picsum.photos/500/300.jpg) `,
             backgroundColor: themeMode === "day" ? "#ffffff" : "#010101",
             backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundOrigin: "content-box",
+            backgroundPosition: "center center",
+            backgroundSize: "55%",
         };
 
         const style_project = {

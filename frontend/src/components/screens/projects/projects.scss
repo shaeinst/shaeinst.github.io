@@ -12,12 +12,13 @@
 
     .title {
         // background-color: blue;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
         margin-top: 1rem;
+        align-self: center;
     }
     .description {
         // background-color: pink;
-        font-size: 0.8rem;
+        font-size: 1rem;
         margin-top: 2rem;
     }
 
@@ -66,8 +67,13 @@
         padding-left: 1rem;
         padding-right: 4.2rem;
 
+        .title {
+            font-size: 1.2rem;
+        }
+
         .description {
             margin-top: 1rem;
+            font-size: 0.8rem;
         }
 
         .card__thumbnail {
