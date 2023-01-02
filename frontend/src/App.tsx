@@ -127,10 +127,6 @@ const App: FC = () => {
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
-
-            {screenSize.dynamicWidth > 768 && location.pathname === "/" && (
-                <div id="wave"></div>
-            )}
         </div>
     );
 };
