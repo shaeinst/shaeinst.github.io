@@ -39,9 +39,6 @@ const App: FC = () => {
         setThemeMode(themeMode === "day" ? "night" : "day");
     };
 
-    const styleContainerWave = {
-    }
-
     useEffect(() => {
         themeMode === "day" ? dayMode() : nightMode();
     }, [themeMode]);
@@ -90,7 +87,7 @@ const App: FC = () => {
             </div>
 
             {/* ──────────  container  ─────── */}
-            <div id="container" className={location.pathname === "/"?"wave":""}>
+            <div id="container">
                 <Routes>
                     <Route
                         path="/"
@@ -123,6 +120,7 @@ const App: FC = () => {
                     />
                     <Route path="/edu_exps" element={<EduExp />} />
                     <Route path="/articles" element={<Articles />} />
+
                     {/* if no url matchs (404 not found) */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
