@@ -1,34 +1,73 @@
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useLocation } from "react-router-dom";
-import { HomeIcon, MoonIcon, SunIcon } from "../../..";
+import useLocalStorage from "use-local-storage";
+import {
+    HomeIcon,
+    MoonIcon,
+    RootState,
+    SunIcon,
+    updateThemeMode,
+} from "../../..";
 import "./navbar.scss";
 
-const Navbar = ({ themeModeState }: any) => {
+const Navbar = () => {
     const [activeArticle, setActiveArticle] = useState<Boolean>(false);
     const [homeFillColor, setHomeFillColor] = useState<string>("");
-
     const location = useLocation();
+    const dispatch = useDispatch();
+
+    /* ──────────────────────────────────────────────────── */
+    /* ───────────────────────  THEME  ──────────────────── */
+
+    const themeModeState = useSelector((state: RootState) => state.theme);
+
+    const [themeMode, setThemeMode] = useLocalStorage<string>(
+        "theme_mode",
+        themeModeState.themeMode
+    );
+
+    const dayMode = () => {
+        document.body.style.backgroundColor = "#ffffff";
+        document.body.style.color = "#010101";
+    };
+    const nightMode = () => {
+        document.body.style.backgroundColor = "#010101";
+        document.body.style.color = "#ffffff";
+    };
+
+    const toggleThemeMode = () => {
+        const mode = themeMode === "day" ? "night" : "day";
+        setThemeMode(mode);
+        dispatch(updateThemeMode({ themeMode: mode }));
+    };
+
+    useEffect(() => {
+        themeMode === "day" ? dayMode() : nightMode();
+    }, [themeMode]);
+    /* ───────────────────  end THEME  ──────────────────── */
+    /* ──────────────────────────────────────────────────── */
 
     /* ──────────────────────────────────────────────────── */
     //  change the navigation item's color according to theme-mode
     /* ──────────────────────────────────────────────────── */
     const [textColor, setTextColor] = useState(
-        themeModeState.themeMode === "night" ? "#ffffff" : "#010101"
+        themeMode === "night" ? "#ffffff" : "#010101"
     );
     let style = {
         color: textColor,
     };
     useEffect(() => {
         setTextColor(() => {
-            return themeModeState.themeMode === "night" ? "#ffffff" : "#010101";
+            return themeMode === "night" ? "#ffffff" : "#010101";
         });
-    }, [themeModeState.themeMode]);
+    }, [themeMode]);
     /* ──────────────────────────────────────────────────── */
 
     useEffect(() => {
         if (location.pathname === "/articles") {
             setActiveArticle(true);
-            themeModeState.themeMode === "night"
+            themeMode === "night"
                 ? setHomeFillColor("#010101")
                 : setHomeFillColor("#ffffff");
         } else {
@@ -69,15 +108,8 @@ const Navbar = ({ themeModeState }: any) => {
 
                 {/* ────────────────────────────────────── */}
                 {/* ───────────── THEME TOGGLE ─────────── */}
-                <div
-                    className="theme__toggle"
-                    onClick={themeModeState.toggleThemeMode}
-                >
-                    {themeModeState.themeMode === "night" ? (
-                        <SunIcon />
-                    ) : (
-                        <MoonIcon />
-                    )}
+                <div className="theme__toggle" onClick={toggleThemeMode}>
+                    {themeMode === "night" ? <SunIcon /> : <MoonIcon />}
                 </div>
                 {/* ────────────────────────────────────── */}
             </div>

@@ -14,6 +14,7 @@ export { default as NotFound } from "./screens/notFound/NotFound";
 export { store } from "./utils/redux/store";
 export type { RootState } from "./utils/redux/store";
 export { updateDimension } from "./utils/redux/dimensionSlice";
+export { updateThemeMode } from "./utils/redux/themeSlice";
 
 // assets
 export * from "../assets";

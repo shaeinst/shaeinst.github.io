@@ -1,7 +1,6 @@
 import { FC, useEffect } from "react";
-import useLocalStorage from "use-local-storage";
 import { Routes, Route } from "react-router-dom";
-
+import { useDispatch, useSelector } from "react-redux";
 import {
     Navbar,
     Sidebar,
@@ -15,40 +14,12 @@ import {
     updateDimension,
 } from "./door";
 import "./app.scss";
-import { useDispatch, useSelector } from "react-redux";
 
 const App: FC = () => {
-    /* ──────────────────────────────────────────────────── */
-    /* ───────────────────────  THEME  ──────────────────── */
-
-    const [themeMode, setThemeMode] = useLocalStorage<string>(
-        "theme_mode",
-        "day"
-    );
-
-    const dayMode = () => {
-        document.body.style.backgroundColor = "#ffffff";
-        document.body.style.color = "#010101";
-    };
-    const nightMode = () => {
-        document.body.style.backgroundColor = "#010101";
-        document.body.style.color = "#ffffff";
-    };
-
-    const toggleThemeMode = () => {
-        setThemeMode(themeMode === "day" ? "night" : "day");
-    };
-
-    useEffect(() => {
-        themeMode === "day" ? dayMode() : nightMode();
-    }, [themeMode]);
-
-    /* ───────────────────  end THEME  ──────────────────── */
-    /* ──────────────────────────────────────────────────── */
+    const dispatch = useDispatch();
 
     /* ──────────────────────────────────────────────────── */
     /* ──────────────────  Window Size  ─────────────────── */
-    const dispatch = useDispatch();
 
     const { screenWidth } = useSelector((state: RootState) => state.dimension);
 
@@ -72,13 +43,13 @@ const App: FC = () => {
             {/* ──────────  sidebar  ──────── */}
             {screenWidth > 768 && (
                 <div id="sidebar">
-                    <Sidebar themeMode={themeMode} />
+                    <Sidebar />
                 </div>
             )}
 
             {/* ───────────  navbar  ───────── */}
             <div id="navbar">
-                <Navbar themeModeState={{ toggleThemeMode, themeMode }} />
+                <Navbar />
             </div>
 
             {/* ──────────  container  ─────── */}
@@ -91,20 +62,14 @@ const App: FC = () => {
                                 <HomePage />
                                 {screenWidth < 768 && (
                                     <div id="sidebar">
-                                        <Sidebar themeMode={themeMode} />
+                                        <Sidebar />
                                     </div>
                                 )}
                             </div>
                         }
                     />
-                    <Route
-                        path="/skills"
-                        element={<Skills themeMode={themeMode} />}
-                    />
-                    <Route
-                        path="/projects"
-                        element={<Projects themeMode={themeMode} />}
-                    />
+                    <Route path="/skills" element={<Skills />} />
+                    <Route path="/projects" element={<Projects />} />
                     <Route path="/edu_exps" element={<EduExp />} />
                     <Route path="/articles" element={<Articles />} />
 

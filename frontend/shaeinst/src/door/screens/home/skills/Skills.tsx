@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import {
     BashIcon,
     DjangoIcon,
@@ -9,10 +10,10 @@ import {
     Nestjs,
     PythonIcon,
     ReactIcon,
+    RootState,
     RustIcon,
     SassIcon,
     TypesciptIcon,
-
 } from "../../..";
 import "./skills.scss";
 
@@ -27,7 +28,9 @@ const SkillCard = (ICON: any, skillName: string, color?: string) => {
     );
 };
 
-const Skills = ({ themeMode }: any) => {
+const Skills = () => {
+    const { themeMode } = useSelector((state: RootState) => state.theme);
+
     const fillColor = themeMode === "night" ? "#ffffff" : "#010101";
 
     return (

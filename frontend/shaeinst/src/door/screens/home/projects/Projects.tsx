@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../..";
 import "./projects.scss";
 
-const Projects = ({ themeMode }: any) => {
+const Projects = () => {
+    const { themeMode } = useSelector((state: RootState) => state.theme);
     const { screenWidth } = useSelector((state: RootState) => state.dimension);
 
     const CardProject = (
