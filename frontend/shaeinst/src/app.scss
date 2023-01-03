@@ -32,7 +32,7 @@ body {
         "blank   navbar"
         "sidebar container";
     grid-template-columns: minmax(200px, 1fr) 4fr;
-    grid-template-rows: 0.6fr 5fr;
+    grid-template-rows: 0.4fr 5fr;
 
     #sidebar {
         // background-color: yellow;
@@ -41,7 +41,6 @@ body {
     #navbar {
         // background-color: pink;
         grid-area: navbar;
-        padding-bottom: 20px;
         margin-left: 1rem;
         position: relative;
     }
@@ -51,9 +50,21 @@ body {
         border-top: 1px solid #7e7e7e;
         border-left: 1px solid #7e7e7e;
         border-radius: 3px;
+        position: relative;
+
         overflow-y: scroll;
         scrollbar-width: 11px;
         -ms-overflow-style: none;
+
+        display: flex;
+        flex-direction: column;
+
+        .navbar__secondary {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding-top: 0.5rem;
+        }
 
         &::-webkit-scrollbar {
             width: 4px;

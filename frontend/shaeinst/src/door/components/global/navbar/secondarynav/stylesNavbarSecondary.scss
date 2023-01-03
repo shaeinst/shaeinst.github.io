@@ -1,0 +1,40 @@
+.navbar {
+    // background-color: green;
+    display: flex;
+    align-self: center;
+    gap: 2rem;
+    z-index: 100;
+
+    .nav__item {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover::after,
+        &:active::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -8px;
+            background-color: #707ef5;
+        }
+    }
+}
+
+.active__link::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -8px;
+    background-color: #707ef5;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        // background-color: red;
+    }
+}

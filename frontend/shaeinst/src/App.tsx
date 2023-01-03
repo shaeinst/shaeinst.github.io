@@ -1,8 +1,8 @@
 import { FC, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-    Navbar,
+    NavbarPrimary,
     Sidebar,
     HomePage,
     Skills,
@@ -12,12 +12,19 @@ import {
     NotFound,
     RootState,
     updateDimension,
+    NavbarSecondary,
 } from "./door";
 import "./app.scss";
 
 const App: FC = () => {
     const dispatch = useDispatch();
+    const { pathname } = useLocation();
 
+    const { themeMode } = useSelector((state: RootState) => state.theme);
+
+    const styleSecNav = {
+        backgroundColor: themeMode === "day" ? "#ffffff" : "#000000",
+    };
     /* ──────────────────────────────────────────────────── */
     /* ──────────────────  Window Size  ─────────────────── */
 
@@ -53,33 +60,43 @@ const App: FC = () => {
 
             {/* ───────────  navbar  ───────── */}
             <div id="navbar">
-                <Navbar />
+                <NavbarPrimary />
             </div>
 
             {/* ──────────  container  ─────── */}
             <div id="container">
-                <Routes>
-                    <Route
-                        path="/"
-                        element={
-                            <div className="home">
-                                <HomePage />
-                                {screenWidth < 768 && (
-                                    <div id="sidebar">
-                                        <Sidebar />
-                                    </div>
-                                )}
-                            </div>
-                        }
-                    />
-                    <Route path="/skills" element={<Skills />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/edu_exps" element={<EduExp />} />
-                    <Route path="/articles" element={<Articles />} />
+                {
+                    // don't show secondary navbar in article screen
+                    pathname !== "/articles" && (
+                        <div className="navbar__secondary" style={styleSecNav}>
+                            <NavbarSecondary />
+                        </div>
+                    )
+                }
+                <div>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={
+                                <div className="home">
+                                    <HomePage />
+                                    {screenWidth < 768 && (
+                                        <div id="sidebar">
+                                            <Sidebar />
+                                        </div>
+                                    )}
+                                </div>
+                            }
+                        />
+                        <Route path="/skills" element={<Skills />} />
+                        <Route path="/projects" element={<Projects />} />
+                        <Route path="/edu_exps" element={<EduExp />} />
+                        <Route path="/articles" element={<Articles />} />
 
-                    {/* if no url matchs (404 not found) */}
-                    <Route path="*" element={<NotFound />} />
-                </Routes>
+                        {/* if no url matchs (404 not found) */}
+                        <Route path="*" element={<NotFound />} />
+                    </Routes>
+                </div>
             </div>
         </div>
     );
