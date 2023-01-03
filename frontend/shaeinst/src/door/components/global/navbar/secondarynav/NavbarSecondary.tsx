@@ -3,7 +3,7 @@ import "./stylesNavbarSecondary.scss";
 
 const Navbar = () => {
     return (
-        <nav className="navbar">
+        <nav className="secondary__navbar">
             {/* ────────────────────────────────────── */}
             {/* ─────────────── SKILLS ─────────────── */}
             <NavLink
