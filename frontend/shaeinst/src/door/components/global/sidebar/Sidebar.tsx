@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { useLocation } from "react-router-dom";
 import "./sidebar.scss";
 import {
@@ -7,13 +6,13 @@ import {
     LinkedinIcon,
     EmailIcon,
     ListIcon,
+    RootState,
 } from "../../..";
+import { useSelector } from "react-redux";
 
-interface Props {
-    themeMode: string;
-}
+const Sidebar = () => {
+    const { themeMode } = useSelector((state: RootState) => state.theme);
 
-const Sidebar: FC<Props> = ({ themeMode }) => {
     let fillColor = "#ffffff";
     if (themeMode === "day") fillColor = "#010101";
 
