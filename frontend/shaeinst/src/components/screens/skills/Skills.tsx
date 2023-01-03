@@ -2,14 +2,15 @@ import {
     BashIcon,
     DjangoIcon,
     GitIcon,
+    Graphql,
     LinuxIcon,
     LuaIcon,
     NeovimIcon,
+    Nestjs,
     PythonIcon,
     ReactIcon,
     RustIcon,
     SassIcon,
-    TailwindIcon,
     TypesciptIcon,
 
 } from "../../../assets";
@@ -32,7 +33,7 @@ const Skills = ({ themeMode }: any) => {
     return (
         <div className="container__skill">
             <div className="skill">
-                <div className="skill__title"> Programming Language </div>
+                <div className="skill__title"> Programming Languages </div>
                 <div className="skill__list">
                     {SkillCard(PythonIcon, "python", fillColor)}
                     {SkillCard(TypesciptIcon, "typescipt", fillColor)}
@@ -50,10 +51,13 @@ const Skills = ({ themeMode }: any) => {
                 </div>
             </div>
             <div className="skill">
-                <div className="skill__title"> Framework </div>
+                <div className="skill__title"> Frameworks </div>
                 <div className="skill__list">
                     {SkillCard(ReactIcon, "react", fillColor)}
+                    {SkillCard(ReactIcon, "react-native", fillColor)}
                     {SkillCard(DjangoIcon, "django", fillColor)}
+                    {SkillCard(Nestjs, "nestjs", fillColor)}
+                    {SkillCard(Graphql, "graphql", fillColor)}
                     {SkillCard(SassIcon, "sass", fillColor)}
                 </div>
             </div>

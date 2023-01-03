@@ -19,6 +19,8 @@ export { default as SunIcon } from "./icons/Sun";
 export { default as TailwindIcon } from "./icons/Tailwind";
 export { default as TwitterIcon } from "./icons/Twitter";
 export { default as TypesciptIcon } from "./icons/Typescipt";
+export { default as Nestjs } from "./icons/Nestjs";
+export { default as Graphql } from "./icons/Graphql";
 
 // decorations
 export { default as Wave } from "./decorations/Wave";
