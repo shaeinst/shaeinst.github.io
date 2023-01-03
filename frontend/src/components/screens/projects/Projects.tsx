@@ -78,6 +78,15 @@ const Projects = ({ themeMode, screenSize }: any) => {
             <div className="right">
                 {CardProject(
                     "right",
+                    "LiveSportly",
+                    "Place where you can watch live sports for free",
+                    "https://raw.githubusercontent.com/shaeinst/media/main/images/github-repositories/logo.svg",
+                    "https://livesportly.com/"
+                )}
+            </div>
+            <div className="left">
+                {CardProject(
+                    "left",
                     "Entrance Question",
                     "Free and open source project to help students prepare for their entrance exams",
                     "https://avatars.githubusercontent.com/u/117027421",
