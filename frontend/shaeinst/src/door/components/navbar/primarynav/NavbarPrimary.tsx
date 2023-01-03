@@ -8,7 +8,7 @@ import {
     RootState,
     SunIcon,
     updateThemeMode,
-} from "../../../..";
+} from "../../../";
 import "./stylesNavbarPrimary.scss";
 
 const Navbar = () => {
