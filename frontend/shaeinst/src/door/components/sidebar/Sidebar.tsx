@@ -7,7 +7,7 @@ import {
     EmailIcon,
     ListIcon,
     RootState,
-} from "../../..";
+} from "../..";
 import { useSelector } from "react-redux";
 
 const Sidebar = () => {
