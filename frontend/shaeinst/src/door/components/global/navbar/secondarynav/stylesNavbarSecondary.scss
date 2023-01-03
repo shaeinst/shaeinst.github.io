@@ -1,7 +1,8 @@
-.navbar {
+.secondary__navbar {
     // background-color: green;
     display: flex;
-    align-self: center;
+    align-items: center;
+    justify-content: center;
     gap: 2rem;
     z-index: 100;
 
@@ -11,6 +12,7 @@
         display: flex;
         text-decoration: none;
         color: inherit;
+        font-size: 1.25rem;
 
         &:hover::after,
         &:active::after {
@@ -34,7 +36,4 @@
 }
 
 @media screen and (max-width: 768px) {
-    .navbar {
-        // background-color: red;
-    }
 }

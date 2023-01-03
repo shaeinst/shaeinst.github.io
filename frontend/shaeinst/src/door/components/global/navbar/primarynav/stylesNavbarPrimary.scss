@@ -11,8 +11,6 @@
         display: flex;
         gap: 2rem;
 
-        .home {
-        }
         .articles {
             text-decoration: none;
         }
@@ -38,7 +36,4 @@
 }
 
 @media screen and (max-width: 768px) {
-    .navbar {
-        // background-color: red;
-    }
 }
