@@ -1,0 +1,44 @@
+.navbar {
+    // background-color: blue;
+    font-size: 1.4rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .navbar__global-left {
+        // background-color: yellow;
+        display: flex;
+        gap: 2rem;
+
+        .home {
+        }
+        .articles {
+            text-decoration: none;
+        }
+    }
+
+    .theme__toggle {
+        cursor: pointer;
+        position: absolute;
+        right: 2rem;
+    }
+}
+
+.active__link::after {
+    background-color: #707ef5;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -8px;
+}
+.active__link-global {
+    color: #707ef5 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        // background-color: red;
+    }
+}

@@ -1,6 +1,9 @@
-// globals
-export { default as Navbar } from "./components/global/navbar/Navbar";
+// sidebar
 export { default as Sidebar } from "./components/global/sidebar/Sidebar";
+
+// navbar
+export { default as NavbarPrimary } from "./components/global/navbar/primarynav/NavbarPrimary";
+export { default as NavbarSecondary } from "./components/global/navbar/secondarynav/NavbarSecondary";
 
 // screens
 export { default as Articles } from "./screens/articles/articles/Articles";
