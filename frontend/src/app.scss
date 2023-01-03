@@ -51,17 +51,16 @@ body {
         border-top: 1px solid #7e7e7e;
         border-left: 1px solid #7e7e7e;
         border-radius: 3px;
-        // overflow-y: scroll;
-        // // scrollbar-width: none;
-        // scrollbar-width: auto;
-        // -ms-overflow-style: none;
+        overflow-y: scroll;
+        scrollbar-width: 11px;
+        -ms-overflow-style: none;
 
-        // &::-webkit-scrollbar {
-        //     display: none;
-        // }
-
-        // overflow: hidden;
-    }
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #666666;
+        }
     }
 }
 
@@ -84,7 +83,6 @@ body {
             grid-area: container;
             margin: inherit;
             position: relative;
-            overflow: hidden;
         }
     }
 }

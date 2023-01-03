@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import useLocalStorage from "use-local-storage";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import {
     Navbar,
@@ -17,9 +17,6 @@ import "./app.scss";
 const App: FC = () => {
     /* ──────────────────────────────────────────────────── */
     /* ───────────────────────  THEME  ──────────────────── */
-
-    const location = useLocation();
-    // console.log(location.pathname);
 
     const [themeMode, setThemeMode] = useLocalStorage<string>(
         "theme_mode",
