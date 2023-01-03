@@ -1,6 +1,6 @@
-import "./home.scss";
+import "./homepage.scss";
 
-const Home = () => {
+const HomePage = () => {
     return (
         <div className="home__container">
             <div className="name__detail">
@@ -14,4 +14,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default HomePage;

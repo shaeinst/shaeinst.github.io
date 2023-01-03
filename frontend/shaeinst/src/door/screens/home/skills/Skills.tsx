@@ -13,7 +13,7 @@ import {
     SassIcon,
     TypesciptIcon,
 
-} from "../../../assets";
+} from "../../..";
 import "./skills.scss";
 
 const SkillCard = (ICON: any, skillName: string, color?: string) => {

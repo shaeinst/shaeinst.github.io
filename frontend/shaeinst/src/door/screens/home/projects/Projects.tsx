@@ -1,7 +1,11 @@
 // import projectsImage from "../../../assets";
+import { useSelector } from "react-redux";
+import { RootState } from "../../..";
 import "./projects.scss";
 
-const Projects = ({ themeMode, screenSize }: any) => {
+const Projects = ({ themeMode }: any) => {
+    const { screenWidth } = useSelector((state: RootState) => state.dimension);
+
     const CardProject = (
         direction: string,
         title: string,
@@ -22,7 +26,7 @@ const Projects = ({ themeMode, screenSize }: any) => {
         };
         let style_card__project = {};
         if (direction === "right") {
-            if (screenSize.dynamicWidth < 768) {
+            if (screenWidth < 768) {
                 style_card__project = {
                     paddingLeft: "4.2rem",
                     paddingRight: "1rem",
