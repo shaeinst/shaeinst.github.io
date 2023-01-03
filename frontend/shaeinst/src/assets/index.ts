@@ -1,8 +1,3 @@
-const Projects = {
-    abstract: require("./images/projects/Abstract.jpg"),
-};
-export default Projects;
-
 // Icons
 export { default as BashIcon } from "./icons/Bash";
 export { default as DjangoIcon } from "./icons/Django";
