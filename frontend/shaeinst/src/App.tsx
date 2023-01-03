@@ -24,14 +24,18 @@ const App: FC = () => {
     const { screenWidth } = useSelector((state: RootState) => state.dimension);
 
     useEffect(() => {
-        dispatch(
-            updateDimension({
-                screenWidth: window.innerWidth,
-                screenHeight: window.innerHeight,
-            })
-        );
-
-        return () => {};
+        const handleResize = () => {
+            dispatch(
+                updateDimension({
+                    screenWidth: window.innerWidth,
+                    screenHeight: window.innerHeight,
+                })
+            );
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
     /* ──────────────── end  Window Size  ───────────────── */
     /* ──────────────────────────────────────────────────── */
