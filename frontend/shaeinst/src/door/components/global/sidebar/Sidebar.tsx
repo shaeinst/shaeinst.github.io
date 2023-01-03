@@ -7,22 +7,15 @@ import {
     LinkedinIcon,
     EmailIcon,
     ListIcon,
-} from "../../../assets";
+} from "../../..";
 
 interface Props {
     themeMode: string;
-    screenSize?: any;
 }
 
-const Sidebar: FC<Props> = ({ themeMode, screenSize }) => {
+const Sidebar: FC<Props> = ({ themeMode }) => {
     let fillColor = "#ffffff";
     if (themeMode === "day") fillColor = "#010101";
-    let fillColorList = fillColor;
-    if (screenSize) {
-        fillColorList = fillColor;
-    } else {
-        fillColorList = "";
-    }
 
     const styleProfile = {
         backgroundColor: themeMode === "day" ? "#ffffff" : "#010101",
@@ -46,11 +39,11 @@ const Sidebar: FC<Props> = ({ themeMode, screenSize }) => {
             <div className="info">
                 <div className="skills">
                     <div className="list">
-                        <ListIcon style={{ fill: `${fillColorList}` }} />
+                        <ListIcon />
                         &nbsp; Software Engineer
                     </div>
                     <div className="list">
-                        <ListIcon style={{ fill: `${fillColorList}` }} />
+                        <ListIcon />
                         &nbsp; Researcher
                     </div>
                 </div>

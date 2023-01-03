@@ -1,18 +1,21 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect } from "react";
 import useLocalStorage from "use-local-storage";
 import { Routes, Route } from "react-router-dom";
 
 import {
     Navbar,
     Sidebar,
-    Home,
+    HomePage,
     Skills,
     Projects,
     EduExp,
     Articles,
     NotFound,
-} from "./components";
+    RootState,
+    updateDimension,
+} from "./door";
 import "./app.scss";
+import { useDispatch, useSelector } from "react-redux";
 
 const App: FC = () => {
     /* ──────────────────────────────────────────────────── */
@@ -45,25 +48,20 @@ const App: FC = () => {
 
     /* ──────────────────────────────────────────────────── */
     /* ──────────────────  Window Size  ─────────────────── */
-    const [screenSize, getDimension] = useState({
-        dynamicWidth: window.innerWidth,
-        dynamicHeight: window.innerHeight,
-    });
+    const dispatch = useDispatch();
 
-    const setDimension = () => {
-        getDimension({
-            dynamicWidth: window.innerWidth,
-            dynamicHeight: window.innerHeight,
-        });
-    };
+    const { screenWidth } = useSelector((state: RootState) => state.dimension);
 
     useEffect(() => {
-        window.addEventListener("resize", setDimension);
+        dispatch(
+            updateDimension({
+                screenWidth: window.innerWidth,
+                screenHeight: window.innerHeight,
+            })
+        );
 
-        return () => {
-            window.removeEventListener("resize", setDimension);
-        };
-    }, [screenSize]);
+        return () => {};
+    }, []);
     /* ──────────────── end  Window Size  ───────────────── */
     /* ──────────────────────────────────────────────────── */
 
@@ -72,7 +70,7 @@ const App: FC = () => {
     return (
         <div id="App">
             {/* ──────────  sidebar  ──────── */}
-            {screenSize.dynamicWidth > 768 && (
+            {screenWidth > 768 && (
                 <div id="sidebar">
                     <Sidebar themeMode={themeMode} />
                 </div>
@@ -90,13 +88,10 @@ const App: FC = () => {
                         path="/"
                         element={
                             <div className="home">
-                                <Home />
-                                {screenSize.dynamicWidth < 768 && (
+                                <HomePage />
+                                {screenWidth < 768 && (
                                     <div id="sidebar">
-                                        <Sidebar
-                                            themeMode={themeMode}
-                                            screenSize={screenSize.dynamicWidth}
-                                        />
+                                        <Sidebar themeMode={themeMode} />
                                     </div>
                                 )}
                             </div>
@@ -108,12 +103,7 @@ const App: FC = () => {
                     />
                     <Route
                         path="/projects"
-                        element={
-                            <Projects
-                                themeMode={themeMode}
-                                screenSize={screenSize}
-                            />
-                        }
+                        element={<Projects themeMode={themeMode} />}
                     />
                     <Route path="/edu_exps" element={<EduExp />} />
                     <Route path="/articles" element={<Articles />} />

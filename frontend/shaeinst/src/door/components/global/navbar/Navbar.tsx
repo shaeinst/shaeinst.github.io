@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { HomeIcon, MoonIcon, SunIcon } from "../../../assets";
+import { HomeIcon, MoonIcon, SunIcon } from "../../..";
 import "./navbar.scss";
 
 const Navbar = ({ themeModeState }: any) => {
