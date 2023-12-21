@@ -1,0 +1,22 @@
+{
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.test.js",
+      "options": {
+        "semi": true
+      }
+    },
+    {
+      "files": ["*.html", "*.js", "*.ts", "*.jsx", "*.tsx", "*.scss", "*.css"],
+      "options": {
+        "tabWidth": 4,
+        "singleQuote": false,
+        "useTabs": false,
+        "printWidth": 100,
+        "trailingComma": "es5",
+        "endOfLine": "lf"
+      }
+    }
+  ]
+}
