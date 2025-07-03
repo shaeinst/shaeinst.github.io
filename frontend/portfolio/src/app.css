@@ -40,7 +40,7 @@
   color: var(--dark-color);
   font-size: 60px;
   display: block;
-  margin: -20px 0;
+  margin: -18px 0;
 }
 
 .title span:nth-child(2) {
@@ -65,7 +65,8 @@
 }
 
 .btn {
-  padding: 15px 38px;
+  width: 147.765625px;
+  height: 48px;
   border-radius: 30px;
   background-color: var(--dark-color);
   color: var(--background-color);
@@ -87,6 +88,25 @@
   border-radius: 50%;
   border: 2px solid var(--icon-background-color);
   background-color: var(--icon-background-color);
+}
+
+.pagination-container{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pagination-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--dark-color);
+  border-radius: 50%;
+}
+
+.pagination-container img{
+  width: 24px;
+  height: 24px;
 }
 
 .middle-section {
