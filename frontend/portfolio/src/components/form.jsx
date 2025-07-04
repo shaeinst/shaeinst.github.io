@@ -10,7 +10,7 @@ export default function ContactForm() {
 
                 <div className="form">
                     <label htmlFor="user_email">Email</label>
-                    <input type="email" name="user_email" placeholder="your_email@.com" required />
+                    <input type="email" name="user_email" placeholder="your.email@.com" required />
                 </div>
 
                 <div className="form">

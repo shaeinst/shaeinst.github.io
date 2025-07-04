@@ -18,29 +18,31 @@ export function App() {
 
   return (
     <>
-      <Nav />
-      <div className="head-container">
+      <section id='top-section'>
+        <Nav />
+        <div className="head-container">
 
-        <div className="title">
-          <span>ALi</span>
-          <span>Shahid</span>
+          <div className="title">
+            <span>ALi</span>
+            <span>Shahid</span>
+          </div>
+
+          <div className="about-me-title">
+            <p>software engineer<span> Math + Physics Aficionado</span></p>
+          </div>
+
+          <div className="btn-container">
+            <button className='btn'>Find me</button>
+          </div>
+
+          <div className="img-container">
+            <img src={image} alt="my image" />
+          </div>
+          <Pagination />
         </div>
+      </section>
 
-        <div className="about-me-title">
-          <p>software engineer<span> Math + Physics Aficionado</span></p>
-        </div>
-
-        <div className="btn-container">
-          <button className='btn'>Find me</button>
-        </div>
-
-        <div className="img-container">
-          <img src={image} alt="my image" />
-        </div>
-        <Pagination />
-      </div>
-
-      <section className='middle-section'>
+      <section className='middle-section' id='middle-section'>
         <div className="about-me">
           <p>I'm a software engineer with a passion for creating elegant, efficient solutions to complex problems. With over 8 years of experience in full-stack development, I
             specialize in building scalable web applications and intuitive user interfaces. My approach combines technical expertise with creative problem-solving, allowing me to bridge the gap between design and functionality.</p>
@@ -69,10 +71,12 @@ export function App() {
           </div>
         </div>
       </section>
+
       <div className="footer-title">
         <span>Get In Touch</span>
       </div>
-      <section className="footer">
+      
+      <section className="footer" id='bottom-section'>
         <ContactForm />
         <div className="information-container">
           <div className="information-title">
