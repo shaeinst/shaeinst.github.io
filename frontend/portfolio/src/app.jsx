@@ -16,6 +16,13 @@ import dribbble_icon from './assets/icons/dribbble.svg'
 
 export function App() {
 
+  const ScrollToBottom = () => {
+    window.scrollTo({
+      top: document.documentElement.scrollHeight,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <>
       <section id='top-section'>
@@ -32,7 +39,7 @@ export function App() {
           </div>
 
           <div className="btn-container">
-            <button className='btn'>Find me</button>
+            <button onClick={ScrollToBottom} className='btn'>Find me</button>
           </div>
 
           <div className="img-container">
@@ -75,7 +82,7 @@ export function App() {
       <div className="footer-title">
         <span>Get In Touch</span>
       </div>
-      
+
       <section className="footer" id='bottom-section'>
         <ContactForm />
         <div className="information-container">
