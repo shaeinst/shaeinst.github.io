@@ -1,14 +1,18 @@
 {
   "name": "portfolio",
+  "homepage": "https://shaeinst.github.io/shaeinst.github.io/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "preact": "^10.26.9"
   },
   "devDependencies": {
