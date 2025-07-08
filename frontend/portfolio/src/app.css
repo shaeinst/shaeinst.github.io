@@ -147,6 +147,16 @@
   display: flex;
   align-items: center;
   padding: 35px 25px;
+  opacity: 0;
+  transform: translate(-100px, -100px) rotate(-10deg);
+  animation: boxAnimation 1.2s ease-out 0.2s forwards;
+}
+
+@keyframes boxAnimation {
+  to {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
 }
 
 .about-me p {
@@ -178,6 +188,8 @@
   border-radius: 16px;
   border: 2px solid var(--box-shadow-color);
   gap: 12px;
+  transform: translate(-100px, -100px) rotate(-10deg);
+  animation: boxAnimation 1.2s ease-out 0.2s forwards;
 }
 
 .skill-title {
@@ -364,7 +376,7 @@ textarea {
 }
 
 /* making responsive for tablets */
-@media screen and (min-width: 768px) {
+@media (min-width: 700px) and (max-width: 1024px) {
   .img-container img {
     width: 240px;
     height: 240px;
@@ -379,12 +391,12 @@ textarea {
     height: 200px
   }
 
-  .skills{
+  .skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  .footer{
+  .footer {
     flex-direction: column;
   }
 }
