@@ -1,0 +1,37 @@
+name: Deploy Preact App to GitHub Pages
+
+on:
+  push:
+    branches:
+      - web
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Check out your code
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # needed so we can push history to gh-page
+
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "16"
+
+      # 3. Install dependencies & build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # 4. Push the build folder to gh-page
+      - name: Deploy to gh-page branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages # the branch you set up for Pages
+          publish_dir: ./dist
