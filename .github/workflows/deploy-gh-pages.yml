@@ -8,6 +8,12 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        # working directory for all `run:` steps
+        working-directory: frontend/portfolio
+
     steps:
       # 1. Check out your code
       - name: Checkout code
@@ -34,4 +40,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages # the branch you set up for Pages
-          publish_dir: ./dist
+          publish_dir: frontend/portfolio/dist
