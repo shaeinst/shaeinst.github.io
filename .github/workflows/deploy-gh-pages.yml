@@ -12,7 +12,7 @@ jobs:
     defaults:
       run:
         # working directory for all `run:` steps
-        working-directory: frontend/portfolio
+        working-directory: frontend
 
     steps:
       # Check out your code
@@ -21,24 +21,23 @@ jobs:
         with:
           fetch-depth: 0 # needed so we can push history to gh-page
 
-      - name: Cache npm
+      - name: Cache bun packages
         uses: actions/cache@v4
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('frontend/portfolio/package-lock.json') }}
+          key: ${{ runner.os }}-bun-${{ hashFiles('frontend/bun.lock') }}
 
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      # Set up BUN
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v2
         with:
-          node-version: "22"
+          bun-version: 1.2.18
 
       # Install dependencies & build
       - name: Install dependencies
-        run: npm ci
-
+        run: bun install
       - name: Build
-        run: npm run build
+        run: bun run build
 
       # Push the build folder to gh-page
       - name: Deploy to gh-page branch
@@ -46,4 +45,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages # the branch you set up for Pages
-          publish_dir: frontend/portfolio/dist
+          publish_dir: frontend/dist
