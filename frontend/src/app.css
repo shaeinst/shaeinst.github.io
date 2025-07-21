@@ -30,11 +30,13 @@
 }
 
 .head-container {
-  padding: 0 100px 100px;
+  /* padding: 0 100px 100px; */
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 20%;
+  /* background-color: blue; */
 }
 
 .title span:nth-child(1) {
@@ -78,14 +80,10 @@
 
 }
 
-.img-container {
-  position: absolute;
-  right: 100px;
-}
-
 .img-container img {
   width: 320px;
   height: 320px;
+  object-fit: contain;
   border-radius: 50%;
   border: 2px solid var(--icon-background-color);
   background-color: var(--icon-background-color);
@@ -130,23 +128,20 @@
 }
 
 .middle-section {
+  height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 40px;
-  padding: 100px 0;
 }
 
 .about-me {
-  width: 768px;
+  width: 60%;
   box-shadow: 0px 0px 8px 4px var(--box-shadow-color);
-  height: 300px;
   border-radius: 16px;
   border: 2px solid var(--box-shadow-color);
   display: flex;
   align-items: center;
-  padding: 35px 25px;
+  padding: 25px;
   opacity: 0;
   transform: translate(-100px, -100px) rotate(-10deg);
   animation: boxAnimation 1.2s ease-out 0.2s forwards;
@@ -163,6 +158,8 @@
   color: var(--about-me-text-color);
   font-size: 16px;
   font-weight: 400;
+  text-align: justify;
+  text-justify: inter-character;
 }
 
 .skill-container {
@@ -219,9 +216,11 @@
 }
 
 .footer {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 50px;
   padding: 70px 0;
 }
@@ -387,8 +386,7 @@ textarea {
   }
 
   .about-me {
-    width: 555px;
-    height: 200px
+    width: 90%;
   }
 
   .skills {
@@ -409,17 +407,11 @@ textarea {
   }
 
   .head-container {
-    padding: 0 40px;
+    padding: 0 10px;
+    gap: 0;
+    /* margin-right: 110px; */
   }
 
-  .img-container {
-    position: relative;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 100px 0;
-  }
 
   .img-container img {
     width: 220px;
@@ -431,8 +423,7 @@ textarea {
   }
 
   .about-me {
-    width: 265px;
-    height: 370px;
+    width: 80%;
   }
 
   .skills {

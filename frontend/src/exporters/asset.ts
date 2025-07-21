@@ -8,6 +8,8 @@ export { default as LaptopIcon } from "../assets/icons/uiengineering.svg";
 export { default as LinkedinIcon } from "../assets/icons/linkedin.svg";
 export { default as LocationIcon } from "../assets/icons/location.svg";
 export { default as MinimalIcon } from "../assets/icons/minimalart.svg";
+export { default as OpensourceIcon } from "../assets/icons/opensource.svg";
+export { default as ResearchIcon } from "../assets/icons/research.svg";
 export { default as RustIcon } from "../assets/icons/rust.svg";
 export { default as TwitterIcon } from "../assets/icons/twitter.svg";
 

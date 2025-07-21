@@ -1,7 +1,7 @@
 import {
     BlockchainIcon,
-    LaptopIcon,
-    MinimalIcon,
+    OpensourceIcon,
+    ResearchIcon,
     RustIcon,
 } from "$exporter/asset";
 
@@ -12,12 +12,11 @@ export default function Page() {
         <section className="middle-section" id="middle-section">
             <div className="about-me">
                 <p>
-                    I'm a software engineer with a passion for creating elegant,
-                    efficient solutions to complex problems. With over 8 years of
-                    experience in full-stack development, I specialize in building
-                    scalable web applications and intuitive user interfaces. My approach
-                    combines technical expertise with creative problem-solving, allowing
-                    me to bridge the gap between design and functionality.
+                    I'm a software engineer focused on building reliable, scalable systems. Since 2017, I've specialized in crafting
+                    efficient runtimes, strong type-safe tooling, and clear architectures that perform at scale. I have experience
+                    designing backend services, APIs, event-driven pipelines, user interfaces, and blockchain-based solutions.
+                    I'm deeply interested in mathematics and physics, and I enjoy exploring ideas through research and experimentation.
+                    I'm always open to collaboration, networking, and meaningful opportunities in tech.
                 </p>
             </div>
             <div className="skill-container">
@@ -34,12 +33,12 @@ export default function Page() {
                         <span>Rust</span>
                     </div>
                     <div className="skill">
-                        <img src={LaptopIcon} alt="skill icon" />
-                        <span>UI Engineering</span>
+                        <img src={ResearchIcon} alt="skill icon" />
+                        <span>Research</span>
                     </div>
                     <div className="skill">
-                        <img src={MinimalIcon} alt="skill icon" />
-                        <span>Minimal Art</span>
+                        <img src={OpensourceIcon} alt="skill icon" />
+                        <span>Opensource</span>
                     </div>
                 </div>
             </div>
