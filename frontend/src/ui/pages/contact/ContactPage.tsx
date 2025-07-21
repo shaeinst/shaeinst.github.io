@@ -1,12 +1,9 @@
 import {
-    DribbbleIcon,
     EmailIcon,
     GithubIcon,
     LinkedinIcon,
-    LocationIcon,
-    TwitterIcon,
 } from "$exporter/asset";
-import { ContactForm, SocialBtn } from "$exporter/component";
+import { SocialBtn } from "$exporter/component";
 
 
 export default function Page() {
