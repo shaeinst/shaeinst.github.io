@@ -128,7 +128,6 @@
 }
 
 .middle-section {
-  height: 100vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -409,7 +408,8 @@ textarea {
   .head-container {
     padding: 0 10px;
     gap: 0;
-    /* margin-right: 110px; */
+    flex-direction: column;
+    flex-flow: column-reverse;
   }
 
 
