@@ -41,7 +41,7 @@ jobs:
 
       # Copy CNAME file to the build directory
       - name: Copy CNAME file
-        run: cp CNAME frontend/dist/
+        run: cp CNAME dist/
 
       # Push the build folder to gh-page
       - name: Deploy to gh-page branch
