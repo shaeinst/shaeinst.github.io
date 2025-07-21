@@ -39,6 +39,10 @@ jobs:
       - name: Build
         run: bun run build
 
+      # Copy CNAME file to the build directory
+      - name: Copy CNAME file
+        run: cp CNAME frontend/dist/
+
       # Push the build folder to gh-page
       - name: Deploy to gh-page branch
         uses: peaceiris/actions-gh-pages@v4
